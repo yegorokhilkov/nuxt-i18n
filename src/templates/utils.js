@@ -86,7 +86,7 @@ const getForwarded = req => (
  */
 const getHostname = req => (
   process.client ? window.location.href.split('/')[2] : req.headers.host
-)
+).replace(/^(www.)?(.*)$/, '$2')
 
 /**
  * Get locale code that corresponds to current hostname
